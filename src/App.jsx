@@ -1,14 +1,19 @@
 
+
 import './App.css'
 
-function App() {
 
+function App() {
+  
 
   return (
     <>
-     hello
+      home
+     
     </>
-  )
+  );
+  
+  
 }
 
 export default App
