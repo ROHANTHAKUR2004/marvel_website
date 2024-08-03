@@ -1,0 +1,29 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    background-color: rgb(19, 10, 10);
+}
+
+img{
+    height: 50px;
+    width: 100px;
+}
+
+.part2{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 40px;
+}
+
+nav h1 {
+    font-size: 40px;
+}
+
+nav h4 {
+    color: rgb(223, 20, 20);
+    font-size: 20px;
+    font-weight: 500;
+}

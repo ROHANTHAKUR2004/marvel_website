@@ -1,6 +1,8 @@
 
 
 import './App.css'
+import Layout from './Layout/Layout';
+import LoadingPage from './Pages/Loadingpage/LoadingPage';
 
 
 function App() {
@@ -8,9 +10,16 @@ function App() {
 
   return (
     <>
-      home
-     
+    
+      {/* <LoadingPage/> */}
+    
+       <Layout/>
     </>
+       
+  
+     
+     
+    
   );
   
   

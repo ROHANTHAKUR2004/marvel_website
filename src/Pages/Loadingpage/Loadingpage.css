@@ -1,0 +1,47 @@
+.main{
+    overflow: hidden;
+}
+
+.main img{
+    height: 10rem;
+    border-radius: 60%;
+}
+.image{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.image img {
+    overflow-y: hidden;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+}
+
+.text{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.text h1 {
+    font-size: 60px;
+    padding: 10px;
+    font-weight: 900;
+    border-radius: 10%;
+    color: red;
+
+}
+
+.button {
+    
+    margin: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center 
+}
+
