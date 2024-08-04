@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
  import gsap from 'gsap';
 import './Loadingpage.css';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,6 +14,7 @@ export default function LoadingPage() {
     const mutiref = useRef();
     const uniref = useRef();
     const tl = gsap.timeline();
+    const navigate = useNavigate();
     
 
     useGSAP(() => {
@@ -62,6 +64,7 @@ export default function LoadingPage() {
 
   return (
     
+    
        <div className='main'>
           <div className="image">
             <img src="https://i.pinimg.com/236x/c9/13/3a/c9133ae1b62ed6bd11a15be7a489e498.jpg" alt="" />
@@ -71,7 +74,9 @@ export default function LoadingPage() {
             <h1 ref={uniref}>MUTI-UNIVERSE</h1>
           </div>
         <div className='button'>
-          <button className="btn btn-warning">Lets GO</button>
+          <button
+            onClick={() => navigate('/main')}
+           className="btn btn-warning">Explore</button>
         </div>
           
          

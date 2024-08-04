@@ -1,8 +1,8 @@
 
 
 import './App.css'
-import Layout from './Layout/Layout';
-import LoadingPage from './Pages/Loadingpage/LoadingPage';
+import MainRoutes from './Routes/MainRoutes';
+
 
 
 function App() {
@@ -10,10 +10,7 @@ function App() {
 
   return (
     <>
-    
-      {/* <LoadingPage/> */}
-    
-       <Layout/>
+     <MainRoutes/>
     </>
        
   
