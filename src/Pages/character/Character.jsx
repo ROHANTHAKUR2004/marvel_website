@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Layout from "../../Layout/Layout";
 import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function Character() {
 
   const [char, setchar] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const characterlist =  localStorage.getItem('characters');
@@ -45,7 +46,11 @@ export default function Character() {
       
      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4'> 
      {char.map(character => (
-        <div key={character.id} className='p-4 rounded shadow-lg'>
+      <div
+         onClick={() => navigate(`/characters/detail/${character.id}`)}
+         key={character.id}
+         className='p-4 hover:bg-red-600 rounded shadow-lg cursor-pointer'
+       >
         <img 
           className='w-full h-48 object-cover rounded'
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
