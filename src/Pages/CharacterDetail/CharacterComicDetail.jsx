@@ -29,7 +29,7 @@ export default function CharacterComicDetail() {
 
   return (
     <div>
-      jdjjgjsrd
+      jdjjgjsrdwejotroeytrjyt
     </div>
   )
 }
