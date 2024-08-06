@@ -23,6 +23,29 @@ export const getAllCharacters = createAsyncThunk('characters/fetchAll', async ()
     }
 });
 
+
+export const getAllCharacterscomics = createAsyncThunk('characters/fetchAll', async (characterid) => {
+    try {
+        const response =  AxiosInstance.get(`characters/${characterid}/comics`, {
+            params: {
+                apikey: '4479c0e8080e207ad3cdcb63f1d540cf',
+                ts: '1722603293325',
+                hash: '078aef99d5fd4ede300e813c675a3eeb'
+            }
+        });
+        return await response // Adjust according to the actual response structure
+    } catch (error) {
+        console.error("Error fetching characters:", error);
+
+    }
+});
+
+
+
+
+
+
+
 const characterSlice = createSlice({
     name: 'characters',
     initialState,
