@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { getAllCharacterscomics } from "../../Redux/Slices/CharacterSlice";
+import { useDispatch } from "react-redux";
+
 
 export default function CharacterDetail() {
   const { characterId } = useParams();
   const [chardetail, setchardetail] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch(); 
+
+  const fetchCharacterscomics = async () => {
+       await dispatch(getAllCharacterscomics(characterId));
+  };
 
   useEffect(() => {
+    fetchCharacterscomics();
     const characterlist = localStorage.getItem('characters');
     const characters = JSON.parse(characterlist);
+    
     const character = characters.find(char => char.id === Number(characterId));
     setchardetail(character);
   }, [characterId]);
 
-  console.log(chardetail);
+
 
   if (!chardetail) {
     return <div>Loading...</div>;
@@ -47,10 +57,13 @@ export default function CharacterDetail() {
 
       <div className="lg:col-span-1 flex flex-col gap-6">
        
-        <div className="p-4 bg-gray-800 rounded-lg text-white">
-          <div className="text-2xl font-bold mb-2">COMICS</div>
+        <div 
+        onClick={() => navigate(`/characters/${characterId}/comics`)}
+        className="p-4 bg-gray-800 rounded-lg text-white">
+          <div 
+
+          className="text-2xl font-bold mb-2">COMICS</div>
           <ul 
-           onClick={() => navigate(`/characters/${characterId}/comics`)}
           className="list-disc list-inside text-lg font-light text-yellow-100 space-y-2">
             {chardetail.comics && chardetail.comics.items.length > 0 ? (
               chardetail.comics.items.map((comic, index) => (
